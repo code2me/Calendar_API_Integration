@@ -9,7 +9,8 @@ const oauth2Client = new google.auth.OAuth2(
 )
 
 const corsOptions = {
-  origin: 'https://calendar-api-integration.vercel.app/'
+  origin: 'https://calendar-api-integration.vercel.app/',
+  optionsSuccessStatus: 204
 };
 
 router.use(cors(corsOptions));
@@ -17,6 +18,13 @@ router.use(cors(corsOptions));
 router.get('/', async (req, res, next) => {
   res.send({ message: 'Ok api is working 🚀' });
 });
+
+// router.options('/create-tokens', async (req, res, next) => {
+//   res.set('Access-Control-Allow-Origin', 'https://calendar-api-integration.vercel.app');
+//   res.set('Access-Control-Allow-Methods', 'POST');
+//   res.set('Access-Control-Allow-Headers', 'Content-Type');
+//   res.send();
+// });
 
 router.post('/create-tokens', async (req, res, next) => {
   try {
