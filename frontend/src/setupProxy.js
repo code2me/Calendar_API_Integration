@@ -4,7 +4,7 @@ module.exports = function (app) {
     app.use(
         '/api',
         createProxyMiddleware({
-            target: 'http://localhost:4000/',
+            target: 'https://calenderapp-navneetbahuguna007.b4a.run:4000',
             changeOrigin: true,
         })
     );
