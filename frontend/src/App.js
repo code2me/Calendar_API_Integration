@@ -76,7 +76,7 @@ function App() {
     onSuccess: async (response) => {
       const { code } = response;
       try {
-        const { data } = await axios.post("/api/create-tokens", { code });
+        const { data } = await axios.post("https://calenderapp-navneetbahuguna007.b4a.run:4000/api/create-tokens", { code });
         setEvents(data);
       } catch (error) {
         console.error(error);
