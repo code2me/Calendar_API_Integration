@@ -12,13 +12,13 @@ const StyledApp = styled.div`
   font-family: Ubuntu, sans-serif;
 
   h1 {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 10px  ;
+    margin-bottom: 0px;
     text-align: center;
   }
 
   p {
-    margin-top: 0;
+    margin-top: 0px;
     color: #4285f4;
   }
 
@@ -47,6 +47,7 @@ const StyledApp = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 
     a {
       color: #333;
@@ -73,7 +74,6 @@ function App() {
   const googleLogin = useGoogleLogin({
     flow: "auth-code",
     onSuccess: async (response) => {
-      console.log(response);
       const { code } = response;
       try {
         const { data } = await axios.post("/api/create-tokens", { code });
